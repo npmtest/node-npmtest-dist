@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-dist/dist/lib/dist.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-dist/node_modules/dist/lib/dist.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-dist">npmtest-dist (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-dist/dist/lib/dist.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-dist/node_modules/dist/lib/dist.js</span></h1>
     <h2>
         
         Statements: <span class="metric">23.68% <small>(9 / 38)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-dist/dist/lib/</a> &#187; dist.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-dist/node_modules/dist/lib/</a> » dist.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -367,80 +365,81 @@ var uglify = require('uglify-js');
 var path = require('path')
 var filesize = require('filesize');
 &nbsp;
-var generateProd = <span class="fstat-no" title="function not covered" >function(source, copyright) {</span>
-<span class="cstat-no" title="statement not covered" >  var out = copyright;</span>
-<span class="cstat-no" title="statement not covered" >  var ast = uglify.parser.parse(source);</span>
-<span class="cstat-no" title="statement not covered" >  ast = uglify.uglify.ast_mangle(ast);</span>
-<span class="cstat-no" title="statement not covered" >  ast = uglify.uglify.ast_squeeze(ast);</span>
-<span class="cstat-no" title="statement not covered" >  out += uglify.uglify.gen_code(ast);</span>
-<span class="cstat-no" title="statement not covered" >  return out;</span>
+var generateProd = <span class="fstat-no" title="function not covered">function(source, copyright) {</span>
+<span class="cstat-no" title="statement not covered">  var out = copyright;</span>
+<span class="cstat-no" title="statement not covered">  var ast = uglify.parser.parse(source);</span>
+<span class="cstat-no" title="statement not covered">  ast = uglify.uglify.ast_mangle(ast);</span>
+<span class="cstat-no" title="statement not covered">  ast = uglify.uglify.ast_squeeze(ast);</span>
+<span class="cstat-no" title="statement not covered">  out += uglify.uglify.gen_code(ast);</span>
+<span class="cstat-no" title="statement not covered">  return out;</span>
 }
 &nbsp;
-var getProdFilename = <span class="fstat-no" title="function not covered" >function(devFile) {</span>
-<span class="cstat-no" title="statement not covered" >  var ext = path.extname(devFile);</span>
-<span class="cstat-no" title="statement not covered" >  var basename = path.basename(devFile, ext);</span>
+var getProdFilename = <span class="fstat-no" title="function not covered">function(devFile) {</span>
+<span class="cstat-no" title="statement not covered">  var ext = path.extname(devFile);</span>
+<span class="cstat-no" title="statement not covered">  var basename = path.basename(devFile, ext);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return basename + '.min' + ext;</span>
+<span class="cstat-no" title="statement not covered">  return basename + '.min' + ext;</span>
 }
 &nbsp;
-var size = <span class="fstat-no" title="function not covered" >function(source) {</span>
-<span class="cstat-no" title="statement not covered" >  var bytes = Buffer.byteLength(source);</span>
-<span class="cstat-no" title="statement not covered" >  return filesize(bytes);</span>
+var size = <span class="fstat-no" title="function not covered">function(source) {</span>
+<span class="cstat-no" title="statement not covered">  var bytes = Buffer.byteLength(source);</span>
+<span class="cstat-no" title="statement not covered">  return filesize(bytes);</span>
 }
 &nbsp;
-var dist = <span class="fstat-no" title="function not covered" >function(options) {</span>
+var dist = <span class="fstat-no" title="function not covered">function(options) {</span>
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (options.input) {</span>
-<span class="cstat-no" title="statement not covered" >    options.source = fs.readFileSync(options.input, 'utf8');</span>
+<span class="cstat-no" title="statement not covered">  if (options.input) {</span>
+<span class="cstat-no" title="statement not covered">    options.source = fs.readFileSync(options.input, 'utf8');</span>
   } else {
-<span class="cstat-no" title="statement not covered" >    if (!options.filename &amp;&amp; options.complete) {</span>
-<span class="cstat-no" title="statement not covered" >      return options.complete(new Error('filename is required when using source'));</span>
+<span class="cstat-no" title="statement not covered">    if (!options.filename &amp;&amp; options.complete) {</span>
+<span class="cstat-no" title="statement not covered">      return options.complete(new Error('filename is required when using source'));</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options.copyright = (options.copyright) ? fs.readFileSync(options.copyright, 'utf8') + '\n' : '';</span>
+<span class="cstat-no" title="statement not covered">  options.copyright = (options.copyright) ? fs.readFileSync(options.copyright, 'utf8') + '\n' : '';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var devFile = (options.input) ? path.basename(options.input) : options.filename;</span>
-<span class="cstat-no" title="statement not covered" >  var devSource = options.copyright + options.source;</span>
+<span class="cstat-no" title="statement not covered">  var devFile = (options.input) ? path.basename(options.input) : options.filename;</span>
+<span class="cstat-no" title="statement not covered">  var devSource = options.copyright + options.source;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var prodFile = getProdFilename(devFile);</span>
-<span class="cstat-no" title="statement not covered" >  var prodSource = generateProd(options.source, options.copyright);</span>
+<span class="cstat-no" title="statement not covered">  var prodFile = getProdFilename(devFile);</span>
+<span class="cstat-no" title="statement not covered">  var prodSource = generateProd(options.source, options.copyright);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var dev = {</span>
+<span class="cstat-no" title="statement not covered">  var dev = {</span>
     filename: devFile,
     source: devSource,
     size: size(devSource)
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var prod = {</span>
+<span class="cstat-no" title="statement not covered">  var prod = {</span>
     filename: prodFile,
     source: prodSource,
     size: size(prodSource)
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (options.out) {</span>
-<span class="cstat-no" title="statement not covered" >    dev.filename = path.join(options.out, dev.filename);</span>
-<span class="cstat-no" title="statement not covered" >    prod.filename = path.join(options.out, prod.filename);</span>
+<span class="cstat-no" title="statement not covered">  if (options.out) {</span>
+<span class="cstat-no" title="statement not covered">    dev.filename = path.join(options.out, dev.filename);</span>
+<span class="cstat-no" title="statement not covered">    prod.filename = path.join(options.out, prod.filename);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    fs.writeFileSync(dev.filename, dev.source);</span>
-<span class="cstat-no" title="statement not covered" >    fs.writeFileSync(prod.filename, prod.source);</span>
+<span class="cstat-no" title="statement not covered">    fs.writeFileSync(dev.filename, dev.source);</span>
+<span class="cstat-no" title="statement not covered">    fs.writeFileSync(prod.filename, prod.source);</span>
 &nbsp;
   }
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (options.complete) {</span>
-<span class="cstat-no" title="statement not covered" >    options.complete(null, dev, prod)</span>
+<span class="cstat-no" title="statement not covered">  if (options.complete) {</span>
+<span class="cstat-no" title="statement not covered">    options.complete(null, dev, prod)</span>
   }
 }
 &nbsp;
 module.exports = dist;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 11:55:51 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 12:07:42 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
