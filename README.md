@@ -1,4 +1,7 @@
-# test coverage for  [dist (v0.1.2)](https://github.com/jgallen23/dist)  [![npm package](https://img.shields.io/npm/v/npmtest-dist.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-dist) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-dist.svg)](https://travis-ci.org/npmtest/node-npmtest-dist)
+# npmtest-dist
+
+#### test coverage for  [dist (v0.1.2)](https://github.com/jgallen23/dist)  [![npm package](https://img.shields.io/npm/v/npmtest-dist.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-dist) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-dist.svg)](https://travis-ci.org/npmtest/node-npmtest-dist)
+
 #### a cli tool and library to create development and production versions for the browser
 
 [![NPM](https://nodei.co/npm/dist.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/dist)
